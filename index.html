@@ -1,147 +1,226 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Divine Ede</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/flexslider.css">
-<link rel="stylesheet" href="css/jquery.fancybox.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/animate.min.css">
-<link rel="stylesheet" href="css/font-icon.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <meta charset="utf-8">
+  <meta name="description" content="UX Portfolio of Divine Ede">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Divine Ede - UX Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- Google Font: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    .portfolio-header {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .portfolio-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .portfolio-header p {
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .project-content {
+      padding: 20px;
+    }
+    .project-content h3 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .project-meta {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 15px;
+    }
+    .project-buttons a {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      padding: 10px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      
+      transition: all 0.3s ease;
+    }
+    .btn-case {
+      background: #d80090;
+      color: #fff;
+      
+    }
+    .btn-case:hover {
+      background: #3E1632;
+      color: #fff;
+    }
+    .btn-live {
+      background: #fff;
+      color: #d80090;
+      border:2px solid #d80090;
+    }
+    .btn-live:hover {
+      color: #3E1632;
+      border:2px solid #3E1632;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #111;
+      color: #fff;
+      margin-top: 50px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-<!-- header top section -->
-<section class="banner" role="banner">
-  <header id="header">
-    <div class="header-content clearfix"> <a class="logo" href="index.html"><img src="images/logo.png" width="150px;" alt=""></a>
-      <nav class="navigation" role="navigation">
-        <ul class="primary-nav">
-          <li><a class="current" href="#">Work</a></li>
-          <li><a href="about.html">About</a></li>
-           <li><a href="Graphic Design Portfolio.pdf">View PDF Version</a></li>
-        </ul>
-      </nav>
-      <a href="#" class="nav-toggle">Menu<span></span></a> </div>
-  </header>
-</section>
-<!-- header top section --> 
-<!-- header content section -->
-<section id="hero" class="section ">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-sm-12 hero">
-        <div class="hero-content">
-          <h1>DIVINE IS A HIGH WYCOMBE BASED CREATIVE, EXPLORING GRAPHIC DESIGN, UX/UI & INTERACTIVE DESIGN.</h1>
-        </div>
-        <!-- hero --> 
-      </div>
-     
-        <!-- hero --> 
-      </div>
-    </div>
-  </div>
-</section>
-<!-- header content section --> 
-<!-- portfolio grid section -->
-<section id="portfolio">
-  <div class="container">
-   
-    </div>
-    <div class="row">
-      <div class="col-sm-6 portfolio-item"> <a href="moviego.html" class="portfolio-link">
-        <div class="caption">
-          <div class="caption-content">
-            <h3>Cinema booking app</h3>
-            <h4>MovieGo, 2022</h4>
-          </div>
-        </div>
-        <img src="images/portfolio/work-1.jpg" class="img-responsive" alt=""> </a> </div>
-      <div class="col-sm-6 portfolio-item"> <a href="mintecblog.html" class="portfolio-link">
-        <div class="caption">
-          <div class="caption-content">
-            <h3>Our Insight blog </h3>
-            <h4>Mintec, 2019</h4>
-          </div>
-        </div>
-        <img src="images/portfolio/work-2.jpg" class="img-responsive" alt=""> </a> </div>
-      <div class="col-sm-6 portfolio-item"> <a href="becrypt.html" class="portfolio-link">
-        <div class="caption">
-          <div class="caption-content">
-            <h3>Becrypt Cybersecurity</h3>
-            <h4>OneGTM, 2018</h4>
-          </div>
-        </div>
-        <img src="images/portfolio/work-3.jpg" class="img-responsive" alt=""> </a> </div>
-      <div class="col-sm-6 portfolio-item"> <a href="cme.html" class="portfolio-link">
-        <div class="caption">
-          <div class="caption-content">
-            <h3>Commonwealth Marine Economies</h3>
-            <h4>Mabox, 2018</h4>
-          </div>
-        </div>
-        <img src="images/portfolio/work-4.jpg" class="img-responsive" alt=""> </a> </div>
-      <div class="col-sm-6 portfolio-item"> <a href="aktive.html" class="portfolio-link">
-        <div class="caption">
-          <div class="caption-content">
-            <h3>Pharmacy Branding & Campaign</h3>
-            <h4>Aktive Pharmacy, 2017 - 2019</h4>
-          </div>
-        </div>
-        <img src="images/portfolio/work-5.jpg" class="img-responsive" alt=""> </a> </div>
-      <div class="col-sm-6 portfolio-item"> <a href="metronet.html" class="portfolio-link">
-        <div class="caption">
-          <div class="caption-content">
-            <h3>Business partnership deck</h3>
-            <h4>Metronet, 2018</h4>
-          </div>
-        </div>
-        <img src="images/portfolio/work-6.jpg" class="img-responsive" alt=""> </a> </div>
-    </div>
-  </div>
-</section>
-<!-- portfolio grid section --> 
-<!-- service section -->
-<section id="service" class="service section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-5 col-sm-6">
-        <h4>SKILLS</h4>
-        <p>User Experience Design, Creativity, Communication, Typography, Adobe Creative, Interaction Design, HTML/CSS, Branding, Presentation Design, Project Management, User Interface, Illustration, Graphic Design</p>
-      </div>
-      
-      </div>
-    </div>
-  </div>
-</section>
-<!-- service section --> 
-<!-- footer section -->
-<footer class="footer">
-  <div class="container">
-   
-    <div class="col-md-12 ">
-      <p>© 2022 Divine Ede. All Rights Reserved<br>
-        </p>
-    </div>
-  </div>
-</footer>
-<!-- footer section --> 
 
-<!-- JS FILES --> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/jquery.fancybox.pack.js"></script> 
-<script src="js/retina.min.js"></script> 
-<script src="js/modernizr.js"></script> 
-<script src="js/main.js"></script>
+  <!-- HEADER -->
+  <section class="portfolio-header">
+    <h1>Divine Ede</h1>
+    <p>UX / UI Designer • Creative Direction • Front-End Development</p>
+  </section>
+
+  <!-- PROJECTS GRID -->
+  <div class="container">
+    <div class="row">
+
+      <!-- Project 1 -->
+      <div class="col-md-6">
+        <div class="project-card">
+          <img src="images/portfolio/styleCast.png" alt="StyleCast project preview">
+          <div class="project-content">
+            <h3>StyleCast</h3>
+            <div class="project-meta">2024 • UX/UI Design, Front-End Development</div>
+            <p>Weather + outfit pairing app that inspires daily dressing decisions with live forecasts and curated looks.</p>
+            <div class="project-buttons">
+              <a href="stylecast.html" class="btn-case">View Case Study</a>
+              <a href="https://stylecastfashion.netlify.app" target="_blank" class="btn-live">Live Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-6">
+        <div class="project-card">
+          <img src="images/portfolio/brightshine.png" alt="Shinebright project preview">
+          <div class="project-content">
+            <h3>Shinebright Cleaning</h3>
+            <div class="project-meta">2023 • UX Research, Web Design</div>
+            <p>Branding and booking platform for Shinebright Cleaning, streamlining how customers schedule services online.</p>
+            <div class="project-buttons">
+              <a href="shinebright.html" class="btn-case">View Case Study</a>
+              <a href="https://shinebrightcleaning.netlify.app/booking-a-cleaner" target="_blank" class="btn-live">Live Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-md-6">
+        <div class="project-card">
+          <img src="images/portfolio/codegame.png" alt="Coding Quiz project preview">
+          <div class="project-content">
+            <h3>Coding Quiz Game</h3>
+            <div class="project-meta">2023 • UX/UI Design, Front-End Dev</div>
+            <p>A gamified coding quiz app with timer, progress bar, and high score tracking.</p>
+            <div class="project-buttons">
+              <a href="codingquiz.html" class="btn-case">View Case Study</a>
+              <a href="https://divine2192.github.io/codingQuizGame/starter/index" target="_blank" class="btn-live">Live Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="col-md-6">
+        <div class="project-card">
+          <img src="images/portfolio/scheduler.png" alt="MovieGo project preview">
+          <div class="project-content">
+            <h3>Work Day App</h3>
+            <div class="project-meta">2022 • Creative Direction, UX Design</div>
+            <p>A movie discovery and cinema booking app designed for post-pandemic audiences.</p>
+            <div class="project-buttons">
+              <a href="scheduler.html" class="btn-case">View Case Study</a>
+              <a href="https://divine2192.github.io/WorkDayScheduler/starter/index" target="_blank" class="btn-live">Live Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="col-md-6">
+        <div class="project-card">
+          <img src="images/portfolio/symbiose.png" alt="Clean UI project preview">
+          <div class="project-content">
+            <h3>Symbiose Web and App</h3>
+            <div class="project-meta">2023 • UI/UX Design</div>
+            <p>A modern dashboard interface focusing on clarity, simplicity, and user workflows.</p>
+            <div class="project-buttons">
+              <a href="symbiose.html" class="btn-case">View Case Study</a>
+              <a href="https://www.symbiosemanagement.com/product" target="_blank" class="btn-live">Live Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="col-md-6">
+        <div class="project-card">
+          <img src="images/portfolio/faithflix.png" alt="BrandApp project preview">
+          <div class="project-content">
+            <h3>FaithFlix</h3>
+            <div class="project-meta">2024 • Branding, UI Design</div>
+            <p>A responsive web app for small businesses to manage branding assets and marketing visuals.</p>
+            <div class="project-buttons">
+              <a href="faithflix.html" class="btn-case">View Case Study</a>
+              <a href="https://divine2192.github.io/christian-movie-app/" target="_blank" class="btn-live">Live Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Divine Ede. All Rights Reserved.</p>
+  </footer>
+
 </body>
 </html>
