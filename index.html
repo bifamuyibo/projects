@@ -2,68 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="UX Portfolio of Divine Ede">
+  <meta name="description" content="UX Portfolio of Biola Famuyibo - Lucidcreate">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Divine Ede - UX Portfolio</title>
+  <title>Lucid Creative - Portfolio</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-  <!-- Google Font: Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background: #f9f9f9;
-      color: #222;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      overflow-x: hidden;
+      cursor: url('images/cursor.svg'), auto; /* optional custom cursor */
     }
 
+    a { text-decoration: none; }
+
+    /* HERO */
     .portfolio-header {
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px 40px 20px;
+    }
+    .portfolio-header img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 24px;
+      transition: transform 0.4s ease;
+    }
+    .portfolio-header img:hover {
+      transform: scale(1.1) rotate(2deg);
     }
     .portfolio-header h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeSlideIn 1s forwards 0.2s;
     }
     .portfolio-header p {
-      color: #555;
-      font-size: 1.1rem;
+      color: #aaa;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeSlideIn 1s forwards 0.4s;
+    }
+    .portfolio-header a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeSlideIn 1s forwards 0.6s;
+    }
+    .btn-case { background: #d80090; color: #fff; }
+    .btn-case:hover { background: #3e1632; color: #fff; }
+    .btn-live { background: transparent; color: #d80090; border: 2px solid #d80090; }
+    .btn-live:hover { color: #fff; border: 2px solid #fff; }
+
+    @keyframes fadeSlideIn {
+      to { opacity: 1; transform: translateY(0); }
     }
 
+    /* PROJECTS */
+    #selected-work {
+      padding: 60px 20px;
+    }
     .project-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      margin-bottom: 40px;
+      background: none;
+      color: #fff;
+      border-radius: 5px;
+      border: 1px solid #d80090; 
       overflow: hidden;
-      transition: transform 0.3s ease;
+      margin-bottom: 40px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      position: relative;
+      cursor: pointer;
     }
     .project-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(255,0,144,0.3);
     }
     .project-card img {
       width: 100%;
-      height: auto;
       display: block;
+      transition: transform 0.5s ease;
+    }
+    .project-card:hover img {
+      transform: scale(1.05);
     }
     .project-content {
       padding: 20px;
+      transition: transform 0.4s ease;
     }
-    .project-content h3 {
-      font-size: 1.5rem;
-      font-weight: 500;
-      margin-bottom: 10px;
+    .project-content h3 { font-size: 1.5rem; margin-bottom: 8px; }
+    .project-meta { font-size: 0.9rem; color: #777; margin-bottom: 12px; }
+    .project-buttons {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+      pointer-events: none;
     }
-    .project-meta {
-      font-size: 0.9rem;
-      color: #777;
-      margin-bottom: 15px;
+    .project-card:hover .project-buttons {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
     }
     .project-buttons a {
       display: inline-block;
@@ -71,62 +124,63 @@
       margin-bottom: 10px;
       padding: 10px 18px;
       border-radius: 30px;
-      text-decoration: none;
       font-weight: bold;
       text-transform: uppercase;
-      
       transition: all 0.3s ease;
     }
-    .btn-case {
-      background: #d80090;
-      color: #fff;
-      
+
+    /* Approach */
+    .designer-approach {
+      padding: 60px 20px;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
     }
-    .btn-case:hover {
-      background: #3E1632;
-      color: #fff;
-    }
-    .btn-live {
-      background: #fff;
-      color: #d80090;
-      border:2px solid #d80090;
-    }
-    .btn-live:hover {
-      color: #3E1632;
-      border:2px solid #3E1632;
+    .designer-approach a { color: #d80090; font-weight: bold; }
+    .designer-approach div { display: none; margin-top: 20px; }
+
+    /* Footer */
+    footer {
+      background: transparent;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.8rem;
+      color: #777;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #111;
-      color: #fff;
-      margin-top: 50px;
-      font-size: 0.9rem;
+    /* Responsive */
+    @media (max-width: 768px) {
+      .portfolio-header h1 { font-size: 2rem; }
+      .project-card { margin-bottom: 30px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HERO -->
   <section class="portfolio-header">
-    <h1>Divine Ede</h1>
-    <p>UX / UI Designer • Creative Direction • Front-End Development</p>
+    <img src="images/download.svg" alt="Lucidcreate Logo">
+    <h1>Crafting Clear, Intuitive Digital Experiences</h1>
+    <p>I help brands translate complex ideas into seamless web and UX design.</p>
+    <div>
+      <a href="#selected-work" class="btn-case">View Selected Work</a>
+      <a href="contact.html" class="btn-live">Let’s Talk</a>
+    </div>
   </section>
 
-  <!-- PROJECTS GRID -->
-  <div class="container">
+  <!-- SELECTED WORK -->
+  <section id="selected-work" class="container">
     <div class="row">
 
       <!-- Project 1 -->
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="project-card">
           <img src="images/portfolio/styleCast.png" alt="StyleCast project preview">
           <div class="project-content">
             <h3>StyleCast</h3>
-            <div class="project-meta">2024 • UX/UI Design, Front-End Development</div>
+           <div class="project-meta">UX/UI • Front-End</div>
             <p>Weather + outfit pairing app that inspires daily dressing decisions with live forecasts and curated looks.</p>
-            <div class="project-buttons">
+             <div class="project-buttons">
               <a href="stylecast.html" class="btn-case">View Case Study</a>
               <a href="https://stylecastfashion.netlify.app" target="_blank" class="btn-live">Live Project</a>
             </div>
@@ -135,14 +189,15 @@
       </div>
 
       <!-- Project 2 -->
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="project-card">
           <img src="images/portfolio/brightshine.png" alt="Shinebright project preview">
           <div class="project-content">
-            <h3>Shinebright Cleaning</h3>
-            <div class="project-meta">2023 • UX Research, Web Design</div>
-            <p>Branding and booking platform for Shinebright Cleaning, streamlining how customers schedule services online.</p>
-            <div class="project-buttons">
+            <h3>Shinebright</h3>
+            <div class="project-meta">UX Research • Web Design</div>
+           <p>
+Branding and booking platform for Shinebright Cleaning, streamlining how customers schedule services online.
+           </p> <div class="project-buttons">
               <a href="shinebright.html" class="btn-case">View Case Study</a>
               <a href="https://shinebrightcleaning.netlify.app/booking-a-cleaner" target="_blank" class="btn-live">Live Project</a>
             </div>
@@ -151,76 +206,55 @@
       </div>
 
       <!-- Project 3 -->
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="project-card">
-          <img src="images/portfolio/codegame.png" alt="Coding Quiz project preview">
-          <div class="project-content">
-            <h3>Coding Quiz Game</h3>
-            <div class="project-meta">2023 • UX/UI Design, Front-End Dev</div>
-            <p>A gamified coding quiz app with timer, progress bar, and high score tracking.</p>
-            <div class="project-buttons">
-              <a href="codingquiz.html" class="btn-case">View Case Study</a>
-              <a href="https://divine2192.github.io/codingQuizGame/starter/index" target="_blank" class="btn-live">Live Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="col-md-6">
-        <div class="project-card">
-          <img src="images/portfolio/scheduler.png" alt="MovieGo project preview">
-          <div class="project-content">
-            <h3>Work Day App</h3>
-            <div class="project-meta">2022 • Creative Direction, UX Design</div>
-            <p>A movie discovery and cinema booking app designed for post-pandemic audiences.</p>
-            <div class="project-buttons">
-              <a href="scheduler.html" class="btn-case">View Case Study</a>
-              <a href="https://divine2192.github.io/WorkDayScheduler/starter/index" target="_blank" class="btn-live">Live Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 5 -->
-      <div class="col-md-6">
-        <div class="project-card">
-          <img src="images/portfolio/symbiose.png" alt="Clean UI project preview">
-          <div class="project-content">
-            <h3>Symbiose Web and App</h3>
-            <div class="project-meta">2023 • UI/UX Design</div>
-            <p>A modern dashboard interface focusing on clarity, simplicity, and user workflows.</p>
-            <div class="project-buttons">
-              <a href="symbiose.html" class="btn-case">View Case Study</a>
-              <a href="https://www.symbiosemanagement.com/product" target="_blank" class="btn-live">Live Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 6 -->
-      <div class="col-md-6">
-        <div class="project-card">
-          <img src="images/portfolio/faithflix.png" alt="BrandApp project preview">
+          <img src="images/portfolio/faithflix.png" alt="FaithFlix project preview">
           <div class="project-content">
             <h3>FaithFlix</h3>
-            <div class="project-meta">2024 • Branding, UI Design</div>
-            <p>A responsive web app for small businesses to manage branding assets and marketing visuals.</p>
-            <div class="project-buttons">
+            <div class="project-meta">Branding • UI Design</div>
+           <p>
+Faith-based movie streaming app designed to provide wholesome entertainment options for families and individuals.
+           </p> <div class="project-buttons">
               <a href="faithflix.html" class="btn-case">View Case Study</a>
-              <a href="https://divine2192.github.io/christian-movie-app/" target="_blank" class="btn-live">Live Project</a>
+              <a href="https://bifamuyibo.github.io/christian-movie-app/" target="_blank" class="btn-live">Live Project</a>
             </div>
           </div>
         </div>
       </div>
 
     </div>
-  </div>
+    <div class="text-center" style="margin:60px 0;">
+      <a href="work.html" class="btn-live">View All Projects →</a>
+    </div>
+  </section>
+
+  <!-- DESIGNER APPROACH -->
+  <section class="designer-approach">
+    <p>
+      I design systems that prioritize clarity, accessibility, and real user needs.
+      <a href="approach.html" onclick="this.nextElementSibling.style.display='block'; return false;">Read Approach →</a>
+    </p>
+    <div>
+      <p>I combine UX research, visual design, and front-end development to build products that are both beautiful and usable. Every interaction is intentional, every detail considered.</p>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Divine Ede. All Rights Reserved.</p>
+    <p>© 2026 Lucid Create Design. All Rights Reserved.</p>
   </footer>
+
+  <!-- Optional: Smooth Scroll -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
