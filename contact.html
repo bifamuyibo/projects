@@ -21,7 +21,7 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
-  border-bottom: 1px solid #eee;
+
 }
 
 nav a {
@@ -30,6 +30,66 @@ nav a {
   margin-left: 20px;
   text-decoration: none;
 }
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  font-family: 'Manrope', sans-serif;
+}
+
+.nav-links a {
+  text-decoration: none;
+  
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #d80090;
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #000;
+    flex-direction: column;
+    width: 200px;
+    display: none; /* hidden by default */
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
 
 .container {
   max-width: 900px;
@@ -122,15 +182,55 @@ nav a {
     margin-top: 12px;
   }
 }
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #111;
+  color: #fff;
+  margin-top: 50px;
+  font-size: 0.9rem;
+}
+
+footer .social-links {
+  margin-top: 10px;
+}
+
+footer .social-links a {
+  display: inline-block;
+  margin: 0 5px;
+  transition: transform 0.3s ease;
+}
+
+footer .social-links a:hover {
+  transform: scale(1.1);
+}
+
+footer .social-links img {
+  width: 28px;
+  height: 28px;
+  filter: invert(100%); /* white icon for dark background */
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- Navigation -->
-<nav>
-  <a href="index.html"><img src="images/logo.png" alt="Lucidcreate Logo" width="150" height=""></a>
-    <div>
+ <!-- NAV -->
+ <nav class="main-nav">
+  <a href="index.html" class="logo">
+    <img src="images/logo.png" alt="Lucidcreate Logo" width="150">
+  </a>
+
+  <!-- Hamburger icon for mobile -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="nav-links" id="nav-links">
     <a href="work.html">Work</a>
     <a href="approach.html">Approach</a>
     <a href="contact.html">Contact</a>
@@ -143,9 +243,11 @@ nav a {
   <p>Whether you’re launching a product, redesigning your website, or need UX clarity, I’d love to help.</p>
 </section>
 
-<!-- Contact Form -->
 <section class="container">
   <form class="contact-form" action="mailto:divine.ede@yahoo.com" method="post" enctype="text/plain">
+    <h2>Contact Me</h2>
+    <p>Send me a message about your project and I’ll get back to you as soon as possible.</p>
+
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <input type="text" name="company" placeholder="Company / Startup">
@@ -154,12 +256,86 @@ nav a {
   </form>
 </section>
 
+<style>
+  .container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-form h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .contact-form p {
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: #d80090;
+    box-shadow: 0 0 5px rgba(216,0,144,0.4);
+  }
+
+  .contact-form button {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 30px;
+    background: #d80090;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+
+  .contact-form button:hover {
+    background: #3E1632;
+  }
+
+  @media (max-width: 500px) {
+    .contact-form {
+      gap: 10px;
+    }
+  }
+</style>
+
 <!-- Info / CTA -->
 <section class="container contact-info">
   <h2>Not ready to write?</h2>
   <p>You can also <a href="mailto:divine.ede@yahoo.com" style="color:#d80090;">email me directly</a> or book a free 30-minute UX consult via the link below.</p>
-  <a href="contact.html" class="cta-primary" style="margin-top:16px;">Book Free UX Consult →</a>
+  <a href="https://calendly.com/biolafamuyibo/30min/2026-01-28T15:30:00+00:00" class="cta-primary" style="margin-top:16px;">Book Free UX Consult →</a>
 </section>
+<footer>
+  <p>© 2026 Biola Famuyibo • Lucid Create. All Rights Reserved.</p>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/biola-famuyibo/" target="_blank" aria-label="LinkedIn">
+      <img src="images/linkedin-icon.svg" alt="LinkedIn" />
+    </a>
+  </div>
+</footer>
 
 </body>
 </html>

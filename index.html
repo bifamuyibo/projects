@@ -56,6 +56,82 @@ nav a {
   font-weight: 600;
 }
 
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+ 
+  position: relative;
+}
+
+/* Logo */
+.main-nav .logo img {
+  display: block;
+  max-height: 60px;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  font-family: 'Manrope', sans-serif;
+}
+
+.nav-links a {
+  text-decoration: none;
+  
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #d80090;
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #000;
+    flex-direction: column;
+    width: 200px;
+    display: none; /* hidden by default */
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+
+
 .work-meta,
 .pricing-tag,
 .badge {
@@ -322,14 +398,25 @@ nav a {
 <body>
 
   <!-- NAV -->
-  <nav>
-    <a href="index.html"><img src="images/logo.png" alt="Lucidcreate Logo" width="150" height=""></a>
-    <div>
-      <a href="work.html">Work</a>
-      <a href="approach.html">Approach</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
+ <nav class="main-nav">
+  <a href="index.html" class="logo">
+    <img src="images/logo.png" alt="Lucidcreate Logo" width="150">
+  </a>
+
+  <!-- Hamburger icon for mobile -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="nav-links" id="nav-links">
+    <a href="work.html">Work</a>
+    <a href="approach.html">Approach</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
 
   <!-- HERO -->
   <section class="hero">
@@ -462,12 +549,33 @@ nav a {
 <footer>
   <div class="container" style="padding: 40px 20px; text-align: center; color: #777; font-size: 0.9rem;">
     <p>&copy; 2026 Biola Famuyibo • Lucidcreate. All rights reserved.</p>
+    <div class="social-links">
+    <a href="https://www.linkedin.com/in/biola-famuyibo/" target="_blank" aria-label="LinkedIn">
+      <img src="images/linkedin-icon.svg" alt="LinkedIn" />
+    </a>
+  </div>
+    
     <p>
       <a href="privacy.html" style="color: #777; text-decoration: none; margin-right: 12px;">Privacy Policy</a>
       |
       <a href="terms.html" style="color: #777; text-decoration: none; margin-left: 12px;">Terms of Service</a>
     </p>
+  
+   
+</footer>
   </div>
 </footer>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+
+    // Animate hamburger into X
+    hamburger.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
