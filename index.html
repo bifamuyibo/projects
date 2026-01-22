@@ -2,259 +2,472 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="UX Portfolio of Biola Famuyibo - Lucidcreate">
+  <meta name="description" content="UX & Web Design Portfolio of Biola Famuyibo — Lucidcreate">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lucid Creative - Portfolio</title>
+  <title>Lucidcreate — UX & Web Design</title>
 
-  <!-- CSS -->
+  <!-- Core CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
-      background: #000;
-      color: #fff;
+      font-family: 'Manrope', sans-serif;
+      background: #fff;
+      color: #111;
       margin: 0;
-      overflow-x: hidden;
-      cursor: url('images/cursor.svg'), auto; /* optional custom cursor */
     }
+    h1 {
+  font-size: clamp(2.6rem, 4vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
 
-    a { text-decoration: none; }
+h2 {
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
 
-    /* HERO */
-    .portfolio-header {
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1rem;
+ 
+}
+
+.lead {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #555;
+}
+button,
+.btn,
+a.pricing-cta,
+a.cta-primary {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+nav a {
+  font-weight: 600;
+}
+
+.work-meta,
+.pricing-tag,
+.badge {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 1000;
+      border-bottom: 1px solid #eee;
+    }
+    nav a { font-weight: 500; color: #111; margin-left: 24px; }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      padding: 80px 20px 40px 20px;
+      
     }
-    .portfolio-header img {
-      width: 120px;
-      height: auto;
-      margin-bottom: 24px;
-      transition: transform 0.4s ease;
+    .hero h1 {
+      font-size: 6rem;
+      font-weight: 800;
+      margin-top: 0;
+      width: 600px;
     }
-    .portfolio-header img:hover {
-      transform: scale(1.1) rotate(2deg);
-    }
-    .portfolio-header h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      opacity: 0;
-      transform: translateY(-20px);
-      animation: fadeSlideIn 1s forwards 0.2s;
-    }
-    .portfolio-header p {
-      color: #aaa;
+    .hero p {
       font-size: 1.2rem;
-      margin-bottom: 30px;
-      opacity: 0;
-      transform: translateY(-20px);
-      animation: fadeSlideIn 1s forwards 0.4s;
+      color: #555;
+      max-width: 600px;
+      margin-bottom: 32px;
     }
-    .portfolio-header a {
-      display: inline-block;
-      margin: 10px 10px 0 0;
-      padding: 12px 22px;
-      border-radius: 30px;
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-      opacity: 0;
-      transform: translateY(-20px);
-      animation: fadeSlideIn 1s forwards 0.6s;
-    }
-    .btn-case { background: #d80090; color: #fff; }
-    .btn-case:hover { background: #3e1632; color: #fff; }
-    .btn-live { background: transparent; color: #d80090; border: 2px solid #d80090; }
-    .btn-live:hover { color: #fff; border: 2px solid #fff; }
-
-    @keyframes fadeSlideIn {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* PROJECTS */
-    #selected-work {
-      padding: 60px 20px;
-    }
-    .project-card {
-      background: none;
+    .btn-primary {
+      background: #d80090;
       color: #fff;
-      border-radius: 5px;
-      border: 1px solid #d80090; 
-      overflow: hidden;
-      margin-bottom: 40px;
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-      position: relative;
-      cursor: pointer;
-    }
-    .project-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 15px 35px rgba(255,0,144,0.3);
-    }
-    .project-card img {
-      width: 100%;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-    .project-card:hover img {
-      transform: scale(1.05);
-    }
-    .project-content {
-      padding: 20px;
-      transition: transform 0.4s ease;
-    }
-    .project-content h3 { font-size: 1.5rem; margin-bottom: 8px; }
-    .project-meta { font-size: 0.9rem; color: #777; margin-bottom: 12px; }
-    .project-buttons {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.4s ease;
-      pointer-events: none;
-    }
-    .project-card:hover .project-buttons {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-    .project-buttons a {
-      display: inline-block;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      padding: 10px 18px;
+      padding: 14px 28px;
       border-radius: 30px;
       font-weight: bold;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
+      transition: 0.3s ease;
+    }
+    .btn-primary:hover { background: #3E1632; }
+    .btn-secondary {
+      background: transparent;
+      color: #d80090;
+      border: 2px solid #d80090;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+    .btn-secondary:hover {
+      color: #3E1632;
+      border-color: #3E1632;
     }
 
-    /* Approach */
-    .designer-approach {
-      padding: 60px 20px;
-      text-align: center;
-      max-width: 700px;
+    /* Featured Work */
+    .featured-section { padding: 80px 20px; text-align: center; }
+    .featured-section h2 { font-size: 2rem; margin-bottom: 40px; }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
       margin: 0 auto;
     }
-    .designer-approach a { color: #d80090; font-weight: bold; }
-    .designer-approach div { display: none; margin-top: 20px; }
-
-    /* Footer */
-    footer {
-      background: transparent;
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.8rem;
-      color: #777;
+    .featured-card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0px 4px 24px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
     }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .portfolio-header h1 { font-size: 2rem; }
-      .project-card { margin-bottom: 30px; }
+    .featured-card:hover { transform: translateY(-6px); }
+    .featured-card img { width: 100%; display: block; }
+    .featured-card-content {
+      padding: 20px 24px;
+      text-align: left;
     }
+    .featured-card-content h3 {
+      font-size: 1.4rem;
+      margin: 12px 0;
+    }
+    .featured-card-content p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .featured-card-content a {
+      display: inline-block;
+      margin-top: 12px;
+      font-weight: bold;
+      color: #d80090;
+    }
+/* ===== PRICING GRID ===== */
+
+.pricing-section {
+  padding: 100px 20px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 36px;
+  margin-top: 60px;
+}
+
+.pricing-card {
+  background: #f9f9f9;
+  border-radius: 20px;
+  padding: 36px 30px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+}
+
+.pricing-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+
+.pricing-tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #d80090;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 20px 0 10px;
+}
+
+.pricing-desc {
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.pricing-card ul {
+  padding-left: 18px;
+  margin-bottom: 30px;
+}
+
+.pricing-card ul li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.pricing-cta {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 30px;
+  background: #d80090;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.pricing-cta:hover {
+  background: #3E1632;
+}
+
+/* Highlighted plan */
+.pricing-card.featured {
+  background: #fff;
+  border: 2px solid #d80090;
+  transform: translateY(-10px);
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  right: 20px;
+  background: #d80090;
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .pricing-card.featured {
+    transform: none;
+  }
+}
+
+/* ===== FREE UX CONSULT CTA ===== */
+
+.ux-consult-cta {
+  background: linear-gradient(135deg, #d80090, #3E1632);
+  color: #fff;
+  padding: 100px 20px;
+  margin-top: 120px;
+}
+
+.cta-inner {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.ux-consult-cta h2 {
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+}
+
+.ux-consult-cta p {
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.cta-primary {
+  display: inline-block;
+  padding: 16px 36px;
+  border-radius: 40px;
+  background: #fff;
+  color: #d80090;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cta-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.cta-note {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .ux-consult-cta h2 {
+    font-size: 2rem;
+  }
+}
+
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
+  <nav>
+    <a href="index.html"><img src="images/logo.png" alt="Lucidcreate Logo" width="150" height=""></a>
+    <div>
+      <a href="work.html">Work</a>
+      <a href="approach.html">Approach</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
   <!-- HERO -->
-  <section class="portfolio-header">
-    <img src="images/download.svg" alt="Lucidcreate Logo">
-    <h1>Crafting Clear, Intuitive Digital Experiences</h1>
-    <p>I help brands translate complex ideas into seamless web and UX design.</p>
+  <section class="hero">
+    <h1>Designing Digital Experiences That Work</h1>
+    <p>Helping brands and startups craft intuitive, user-centric web & UX solutions that drive clarity, engagement, and growth.</p>
     <div>
-      <a href="#selected-work" class="btn-case">View Selected Work</a>
-      <a href="contact.html" class="btn-live">Let’s Talk</a>
+      <a href="work.html" class="btn-primary">View Work</a>
+      <a href="contact.html" class="btn-secondary">Let’s Talk</a>
     </div>
   </section>
 
-  <!-- SELECTED WORK -->
-  <section id="selected-work" class="container">
-    <div class="row">
-
-      <!-- Project 1 -->
-      <div class="col-md-4">
-        <div class="project-card">
-          <img src="images/portfolio/styleCast.png" alt="StyleCast project preview">
-          <div class="project-content">
-            <h3>StyleCast</h3>
-           <div class="project-meta">UX/UI • Front-End</div>
-            <p>Weather + outfit pairing app that inspires daily dressing decisions with live forecasts and curated looks.</p>
-             <div class="project-buttons">
-              <a href="stylecast.html" class="btn-case">View Case Study</a>
-              <a href="https://stylecastfashion.netlify.app" target="_blank" class="btn-live">Live Project</a>
-            </div>
-          </div>
+  <!-- FEATURED WORK -->
+  <section class="featured-section">
+    <h2>Featured Projects</h2>
+    <div class="featured-grid">
+      <!-- Example featured card -->
+      <div class="featured-card">
+        <img src="images/portfolio/styleCast.png" alt="StyleCast">
+        <div class="featured-card-content">
+          <h3>StyleCast</h3>
+          <p>UX/UI design & front-end build for a weather + outfit pairing app.</p>
+          <a href="stylecast.html">View Case Study →</a>
         </div>
       </div>
-
-      <!-- Project 2 -->
-      <div class="col-md-4">
-        <div class="project-card">
-          <img src="images/portfolio/brightshine.png" alt="Shinebright project preview">
-          <div class="project-content">
-            <h3>Shinebright</h3>
-            <div class="project-meta">UX Research • Web Design</div>
-           <p>
-Branding and booking platform for Shinebright Cleaning, streamlining how customers schedule services online.
-           </p> <div class="project-buttons">
-              <a href="shinebright.html" class="btn-case">View Case Study</a>
-              <a href="https://shinebrightcleaning.netlify.app/booking-a-cleaner" target="_blank" class="btn-live">Live Project</a>
-            </div>
-          </div>
+      <div class="featured-card">
+        <img src="images/portfolio/brightshine.png" alt="Shinebright">
+        <div class="featured-card-content">
+          <h3>Shinebright</h3>
+          <p>Branding & UX design for a cleaning service booking platform.</p>
+          <a href="shinebright.html">View Case Study →</a>
         </div>
       </div>
-
-      <!-- Project 3 -->
-      <div class="col-md-4">
-        <div class="project-card">
-          <img src="images/portfolio/faithflix.png" alt="FaithFlix project preview">
-          <div class="project-content">
-            <h3>FaithFlix</h3>
-            <div class="project-meta">Branding • UI Design</div>
-           <p>
-Faith-based movie streaming app designed to provide wholesome entertainment options for families and individuals.
-           </p> <div class="project-buttons">
-              <a href="faithflix.html" class="btn-case">View Case Study</a>
-              <a href="https://bifamuyibo.github.io/christian-movie-app/" target="_blank" class="btn-live">Live Project</a>
-            </div>
-          </div>
+      <div class="featured-card">
+        <img src="images/portfolio/faithflix.png" alt="FaithFlix">
+        <div class="featured-card-content">
+          <h3>FaithFlix</h3>
+          <p>Responsive UI design for a brand app and asset library.</p>
+          <a href="faithflix.html">View Case Study →</a>
         </div>
       </div>
-
-    </div>
-    <div class="text-center" style="margin:60px 0;">
-      <a href="work.html" class="btn-live">View All Projects →</a>
     </div>
   </section>
 
-  <!-- DESIGNER APPROACH -->
-  <section class="designer-approach">
+  
+ <section class="pricing-section container">
+  <h1>Pricing & Packages</h1>
+  <p class="lead">
+    Flexible packages designed for startups, founders, and growing teams.
+    Not sure which fits? We’ll figure it out together.
+  </p>
+
+  <div class="pricing-grid">
+
+    <!-- UX Sprint -->
+    <div class="pricing-card">
+      <h3>UX Sprint</h3>
+      <span class="pricing-tag">Early-stage</span>
+
+      <p class="price">From £800</p>
+      <p class="pricing-desc">
+        Validate ideas fast before investing in development.
+      </p>
+
+      <ul>
+        <li>User flows & IA</li>
+        <li>Wireframes</li>
+        <li>UX recommendations</li>
+      </ul>
+
+      <a href="contact.html" class="pricing-cta">Start a sprint →</a>
+    </div>
+
+    <!-- Product Design -->
+    <div class="pricing-card featured">
+      <span class="badge">Most Popular</span>
+      <h3>Product Design</h3>
+      <span class="pricing-tag">MVPs & startups</span>
+
+      <p class="price">From £1,000</p>
+      <p class="pricing-desc">
+        End-to-end UX/UI design for products that need to ship and scale.
+      </p>
+
+      <ul>
+        <li>UX research</li>
+        <li>High-fidelity UI</li>
+        <li>Design system</li>
+      </ul>
+
+      <a href="contact.html" class="pricing-cta">Build my product →</a>
+    </div>
+
+    <!-- Web Experience -->
+    <div class="pricing-card">
+      <h3>Web Experience</h3>
+      <span class="pricing-tag">Brands & businesses</span>
+
+      <p class="price">From £1,500</p>
+      <p class="pricing-desc">
+        Conversion-focused websites designed to communicate clearly.
+      </p>
+
+      <ul>
+        <li>UX strategy</li>
+        <li>Responsive design</li>
+        <li>Front-end build</li>
+      </ul>
+
+      <a href="contact.html" class="pricing-cta">Redesign my site →</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="ux-consult-cta">
+  <div class="cta-inner">
+    <h2>Get a Free Design Consult</h2>
     <p>
-      I design systems that prioritize clarity, accessibility, and real user needs.
-      <a href="approach.html" onclick="this.nextElementSibling.style.display='block'; return false;">Read Approach →</a>
+      Not sure what you need yet? Book a free 30-minute UX designconsultation and
+      get clarity on next steps, risks, and opportunities.
     </p>
-    <div>
-      <p>I combine UX research, visual design, and front-end development to build products that are both beautiful and usable. Every interaction is intentional, every detail considered.</p>
+
+    <div class="cta-actions">
+      <a href="contact.html" class="cta-primary">Book free consult →</a>
+      <span class="cta-note">No obligation • Limited availability</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Lucid Create Design. All Rights Reserved.</p>
-  </footer>
-
-  <!-- Optional: Smooth Scroll -->
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
-
+<footer>
+  <div class="container" style="padding: 40px 20px; text-align: center; color: #777; font-size: 0.9rem;">
+    <p>&copy; 2026 LucidCreative Studio. All rights reserved.</p>
+    <p>
+      <a href="privacy.html" style="color: #777; text-decoration: none; margin-right: 12px;">Privacy Policy</a>
+      |
+      <a href="terms.html" style="color: #777; text-decoration: none; margin-left: 12px;">Terms of Service</a>
+    </p>
+  </div>
+</footer>
 </body>
 </html>

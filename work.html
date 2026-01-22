@@ -3,115 +3,235 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lucidcreate Work - Full Portfolio</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<title>Work — Lucidcreate</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
 <style>
-body { font-family:'Roboto',sans-serif; background:#000; color:#fff; margin:0; }
-a { text-decoration:none; color:#d80090; }
-header { text-align:center; padding:60px 20px; }
-h1 { font-size:2.5rem; margin-bottom:10px; }
-.container { padding:40px 20px; }
-.project-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; }
-.project-card { background:#111; border-radius:12px; overflow:hidden; transition:transform 0.4s ease, box-shadow 0.4s ease; }
-.project-card:hover { transform:translateY(-5px) scale(1.02); box-shadow:0 15px 35px rgba(255,0,144,0.3); }
-.project-card img { width:100%; display:block; }
-.project-content { padding:20px; }
-.project-content h3 { margin-bottom:8px; }
-.project-meta { color:#777; font-size:0.9rem; margin-bottom:12px; }
-.project-buttons a { display:inline-block; margin-right:10px; margin-bottom:10px; padding:10px 18px; border-radius:30px; font-weight:bold; text-transform:uppercase; border:2px solid #d80090; transition:0.3s; }
-.project-buttons a:hover { background:#d80090; color:#fff; }
-footer { text-align:center; padding:40px 20px; font-size:0.8rem; color:#777; }
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #fff;
+  color: #111;
+}
+
+a { text-decoration: none; color: #d80090; }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  border-bottom: 1px solid #eee;
+}
+
+section {
+  padding: 80px 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+p.lead {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 700px;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.work-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f9f9f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.work-card img {
+  width: 100%;
+  display: block;
+}
+
+.work-content {
+  padding: 28px;
+}
+
+.work-content h3 {
+  margin-bottom: 10px;
+}
+
+.work-meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 16px;
+}
+
+.work-content p {
+  color: #555;
+}
+
+.work-content a {
+  display: inline-block;
+  margin-top: 16px;
+  font-weight: 700;
+}
+
+.cta {
+  text-align: center;
+  background: #f5f5f5;
+}
+
+.cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.cta a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 32px;
+  border-radius: 30px;
+  background: #d80090;
+  color: #fff;
+  font-weight: bold;
+}
+
+footer {
+  padding: 40px;
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+}
 </style>
 </head>
+
 <body>
 
-<header>
-<img src="images/download.svg" alt="Lucidcreate Logo" style="width:120px; margin-bottom:20px;">
-<h1>Full Portfolio</h1>
-<p>Explore all projects showcasing UX, UI, Branding, and Web Design</p>
-</header>
-
-<div class="container">
-  <div class="project-grid">
-    <!-- Repeat for all projects -->
-    <div class="project-card">
-      <img src="images/portfolio/styleCast.png" alt="StyleCast">
-      <div class="project-content">
-        <h3>StyleCast</h3>
-        <div class="project-meta">UX/UI • Front-End</div>
-        <div class="project-buttons">
-          <a href="stylecast.html">Case Study</a>
-          <a href="https://stylecastfashion.netlify.app" target="_blank">Live</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <img src="images/portfolio/brightshine.png " alt="Shinebright">
-      <div class="project-content">
-        <h3>Shinebright</h3>
-        <div class="project-meta">UX Research • Web Design</div>
-        <div class="project-buttons">
-          <a href="shinebright.html">Case Study</a>
-          <a href="https://shinebrightcleaning.netlify.app/booking-a-cleaner" target="_blank">Live</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <img src="images/portfolio/faithflix.png" alt="FaithFlix">
-      <div class="project-content">
-        <h3>FaithFlix</h3>
-        <div class="project-meta">Branding • UI Design</div>
-        <div class="project-buttons">
-          <a href="faithflix.html">Case Study</a>
-          <a href="https://bifamuyibo.github.io/christian-movie-app/" target="_blank">Live</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <img src="images/portfolio/codegame.png" alt="Coding Quiz Game">
-      <div class="project-content">
-        <h3>Coding Quiz Game</h3>
-        <div class="project-meta">UX/UI • Front-End</div>
-        <div class="project-buttons">
-          <a href="codingquiz.html">Case Study</a>
-          <a href="https://bifamuyibo.github.io/codingQuizGame/starter/index" target="_blank">Live</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <img src="images/portfolio/symbiose.png" alt="Symbiose Web and App">
-      <div class="project-content">
-        <h3>Symbiose Web and App</h3>
-        <div class="project-meta">UI/UX Design</div>
-        <div class="project-buttons">
-          <a href="symbiose.html">Case Study</a>
-          <a href="https://www.symbiosemanagement.com/product" target="_blank">Live</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <img src="images/portfolio/scheduler.png" alt="Work Day App">
-      <div class="project-content">
-        <h3>Work Day App</h3>
-        <div class="project-meta">UX Design • Creative Direction</div>
-        <div class="project-buttons">
-          <a href="scheduler.html">Case Study</a>
-          <a href="https://bifamuyibo.github.io/WorkDayScheduler/starter/index" target="_blank">Live</a>
-        </div>
-      </div>
-    </div>
-
+<nav>
+  <a href="index.html"><img src="images/logo.png" alt="Lucidcreate Logo" width="150" height=""></a>
+    <div>
+    <a href="work.html">Work</a>
+    <a href="approach.html" style="margin-left:20px;">Approach</a>
+    <a href="contact.html" style="margin-left:20px;">Contact</a>
   </div>
+</nav>
+
+<section class="container">
+  <h1>Selected Work</h1>
+  <p class="lead">
+    A curated selection of projects where design decisions were driven by user needs,
+    business goals, and real-world constraints.
+  </p>
+
+  <div class="work-grid">
+
+    <div class="work-card">
+      <img src="images/portfolio/styleCast.png" alt="StyleCast">
+      <div class="work-content">
+        <h3>StyleCast</h3>
+        <div class="work-meta">UX/UI · Front-End · Product Design</div>
+        <p>
+          Designed an outfit-planning experience that blends weather data with fashion
+          inspiration to reduce daily decision fatigue.
+        </p>
+        <a href="stylecast.html">View case study →</a>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <img src="images/portfolio/brightshine.png" alt="Shinebright">
+      <div class="work-content">
+        <h3>Shinebright Cleaning</h3>
+        <div class="work-meta">UX Research · Web Design</div>
+        <p>
+          Simplified service booking and improved conversion through clearer flows,
+          trust signals, and content hierarchy.
+        </p>
+        <a href="shinebright.html">View case study →</a>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <img src="images/portfolio/faithflix.png" alt="FaithFlix">
+      <div class="work-content">
+        <h3>FaithFlix</h3>
+        <div class="work-meta">Branding · UI Design</div>
+        <p>
+          Created a scalable UI system for a faith-based streaming platform
+          focused on clarity and accessibility.
+        </p>
+        <a href="faithflix.html">View case study →</a>
+      </div>
+    </div>
+<!-- Coding Quiz Game -->
+<div class="work-card">
+  <img src="images/portfolio/codegame.png" alt="Coding Quiz Game">
+  <div class="work-content">
+    <h3>Coding Quiz Game</h3>
+    <div class="work-meta">UX/UI · Front-End</div>
+    <p>
+      A gamified learning experience designed to improve engagement through
+      timed challenges, progress tracking, and instant feedback.
+    </p>
+    <a href="codingquiz.html">View case study →</a><br>
+      </div>
 </div>
 
+<!-- Symbiose Web & App -->
+<div class="work-card">
+  <img src="images/portfolio/symbiose.png" alt="Symbiose Web and App">
+  <div class="work-content">
+    <h3>Symbiose Web & App</h3>
+    <div class="work-meta">UI/UX Design · Dashboard</div>
+    <p>
+      Designed a scalable dashboard interface focused on clarity, usability,
+      and efficient user workflows for business management.
+    </p>
+    <a href="symbiose.html">View case study →</a><br>
+     </div>
+</div>
+
+<!-- Work Day App -->
+<div class="work-card">
+  <img src="images/portfolio/scheduler.png" alt="Work Day App">
+  <div class="work-content">
+    <h3>Work Day App</h3>
+    <div class="work-meta">UX Design · Creative Direction</div>
+    <p>
+      A productivity-focused scheduling tool designed to help users
+      manage daily tasks with time-based clarity and reduced cognitive load.
+    </p>
+    <a href="scheduler.html">View case study →</a><br>
+    </div>
+</div>
+
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Want results like these?</h2>
+  <p>I help teams design products users actually understand and enjoy.</p>
+  <a href="contact.html">Let’s talk</a>
+</section>
+
 <footer>
-<p>© 2026 Lucid Create Design. All Rights Reserved.</p>
+  © 2026 Lucidcreate. All rights reserved.
 </footer>
 
 </body>
